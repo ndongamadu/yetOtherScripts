@@ -29,6 +29,7 @@ with open('%s-ipcData.csv' % country, 'w') as file:
         currentCell = r.findAll('td')
         data = []
         for c in currentCell:
+            print(c)
             data.append(c.get_text())
 
         if nbRows == 0:
