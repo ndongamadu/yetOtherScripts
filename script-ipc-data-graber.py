@@ -1,15 +1,15 @@
-import requests
+# import requests
 import csv
 from bs4 import BeautifulSoup
 from selenium import webdriver
 # from webdriver_manager.chrome import ChromeDriverManager
 # from selenium.webdriver.support.ui import WebDriverWait
 country = 'mozambique'
-#somalia = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151962/"
+# somalia = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151962/"
 moz = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151806/"
-#drc = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151753/"
-#caf = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151724/"
-#yem = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151858/"
+# drc = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151753/"
+# caf = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151724/"
+# yem = "http://www.ipcinfo.org/ipc-country-analysis/details-map/en/c/1151858/"
 
 drv = "/Users/amadu/.wdm/chromedriver/74.0.3729.6/mac64/chromedriver"
 # driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -26,8 +26,8 @@ tab = soupe.find('table', id='population_data_3')
 rows = tab.findAll('tr')
 nbRows = 0
 
-with open('%s-ipcData.csv' % country, 'w') as file:
-    writer = csv.writer(file, delimiter=',')
+with open('%s-ipcData.csv' % country, 'w') as df:
+    writer = csv.writer(df, delimiter=',')
     for r in rows:
         currentCell = r.findAll('td')
         data = []
